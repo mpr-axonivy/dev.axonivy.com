@@ -4,6 +4,7 @@ namespace app;
 
 use app\api\ApiCurrentRelease;
 use app\api\StatusApi;
+use app\api\MarketApi;
 use app\pages\github\GitHubAction;
 use app\pages\api\ApiBrowserAction;
 use app\pages\doc\DocAction;
@@ -91,6 +92,7 @@ class RoutingRules
 
     $app->get('/api/currentRelease', ApiCurrentRelease::class);
     $app->get('/api/status', StatusApi::class);
+    $app->get('/api/market', MarketApi::class);
 
     $app->get('/sitemap.xml', SitemapAction::class);
 

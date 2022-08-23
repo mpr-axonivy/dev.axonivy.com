@@ -11,7 +11,6 @@ class MarketApi
     $data = $this->artifacts();
     $response->getBody()->write((string) json_encode($data));
     $response = $response->withHeader('Content-Type', 'application/json');
-    $response = $response->withHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     return $response;
   }
 

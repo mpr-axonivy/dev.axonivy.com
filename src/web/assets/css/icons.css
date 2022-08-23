@@ -241,8 +241,8 @@ h3 .si {
   -webkit-mask: url('/images/icons/undo.svg') no-repeat center;
 }
 .si.si-types {
-  mask: url('/images/icons/layout-module-1.svg') no-repeat center;
-  -webkit-mask: url('/images/icons/layout-module-1.svg') no-repeat center;
+  mask: url('/images/icons/layout-module.svg') no-repeat center;
+  -webkit-mask: url('/images/icons/layout-module.svg') no-repeat center;
 }
 .si.si-util {
   mask: url('/images/icons/design-tool-pencil-ruler.svg') no-repeat center;

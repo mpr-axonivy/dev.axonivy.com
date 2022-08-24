@@ -309,7 +309,8 @@ class Product implements JsonSerializable
       'language' => $this->getLanguage(),
       'industry' => $this->getIndustry(),
       'compatibility' => $this->getCompatibility(),
-      'installationCount' => $this->getInstallationCount()
+      'installationCount' => $this->getInstallationCount(),
+      'contactUs' => $this->isContactUs()
     ];
   }
 }

@@ -53,7 +53,6 @@ class MarketApi
         'vendorImage' => $product->getVendorImage(),
         'type' => $product->getType(),
         'tags' => $product->getTags(),
-        'url' => $product->getUrl()
       ];
       $products[] = $p;
     }

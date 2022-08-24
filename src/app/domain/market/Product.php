@@ -2,11 +2,12 @@
 
 namespace app\domain\market;
 
+use JsonSerializable;
 use app\Config;
 use app\domain\Version;
 use app\domain\util\StringUtil;
 
-class Product
+class Product implements JsonSerializable
 {
   private string $key;
   private string $path;
@@ -285,6 +286,31 @@ class Product
       return $this->getName() . " in version $version is not installable.";
     }
     return '';
+  }
+
+  public function jsonSerialize()
+  {
+    return 
+    [
+      'key'   => $this->getKey(),
+      'name' => $this->getName(),
+      'version' => $this->getVersion(),
+      'shortDesc' => $this->getShortDescription(),
+      'type' => $this->getType(),
+      'typeIcon' => $this->getTypeIcon(),
+      'tags' => $this->getTags(),
+      'vendor' => $this->getVendor(),
+      'vendorImage' => $this->getVendorImage(),
+      'vendorUrl' => $this->getVendorUrl(),
+      'platformReview' => $this->getPlatformReview(),
+      'cost' => $this->getCost(),
+      'sourceUrl' => $this->getSourceUrl(),
+      'statusBadgeUrl' => $this->getStatusBadgeUrl(),
+      'language' => $this->getLanguage(),
+      'industry' => $this->getIndustry(),
+      'compatibility' => $this->getCompatibility(),
+      'installationCount' => $this->getInstallationCount()
+    ];
   }
 }
 

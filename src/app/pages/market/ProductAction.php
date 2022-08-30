@@ -52,7 +52,7 @@ class ProductAction
       } else if (!$mavenProductInfo->hasVersion($version)) {
         throw new HttpNotFoundException($request);
       }
-
+      
       $mavenArtifacts = $mavenProductInfo->getMavenArtifactsForVersion($version);
       foreach ($mavenArtifacts as $artifact) {
         if ($artifact->getMakesSenseAsMavenDependency()) {
@@ -67,14 +67,14 @@ class ProductAction
           $docUrl = $docArtifact->getDocUrl($product, $version);
         }
       }
-
+      
       $mavenArtifacts = array_filter($mavenArtifacts, fn(MavenArtifact $a) => !$a->isProductArtifact());
     }
-
+    
     $installButton = self::createInstallButton($request, $product, $version);
     
     $getInTouchLink = 'https://www.axonivy.com/marketplace/contact/?market_solutions=' . $product->getKey();
-
+    
     if (!empty($version)) {      
       (new ProductMavenArtifactDownloader())->download($product, $version);
     }

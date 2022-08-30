@@ -19,6 +19,14 @@ class ProductDescription
     $this->setup = $setup;
   }
 
+  public static function readme(Product $product, string $version): string
+  {
+    $file = $product->getProductFile($version, 'README.md');
+    if (file_exists($file)) {
+      return file_get_contents($file);
+    }
+  }
+
   public static function create(Product $product, string $version): ProductDescription
   {
     $assetBaseUrl = $product->assetBaseUrl($version);

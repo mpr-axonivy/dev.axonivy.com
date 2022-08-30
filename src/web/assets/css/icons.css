@@ -197,8 +197,8 @@ h3 .si {
   -webkit-mask: url('/images/icons/file-java.svg') no-repeat center;
 }
 .si.si-check {
-  mask: url('/images/icons/check-circle-1.svg') no-repeat center;
-  -webkit-mask: url('/images/icons/check-circle-1.svg') no-repeat center;
+  mask: url('/images/icons/check-circle.svg') no-repeat center;
+  -webkit-mask: url('/images/icons/check-circle.svg') no-repeat center;
 }
 .si.si-pen {
   mask: url('/images/icons/pencil.svg') no-repeat center;
